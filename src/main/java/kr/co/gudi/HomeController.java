@@ -15,14 +15,17 @@ public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
+
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {
 		logger.info("index");
-		
+		model.addAttribute("msg","Hello, GIT");
 		return "home";
+	}
+	
+	@RequestMapping(value="/list")
+	public String list(Model model) {
+		return "list";
 	}
 	
 }
